@@ -1,0 +1,56 @@
+# ReportGlobal 配置文件
+
+# 服务器标识（用于区分不同服务器的举报）
+server-name: "server1"
+
+# 数据库配置
+database:
+  host: localhost
+  port: 3306
+  database: minecraft
+  username: root
+  password: password
+  # 连接池配置
+  pool:
+    maximumPoolSize: 10
+    minimumIdle: 5
+    maxLifetime: 1800000  # 30分钟
+    connectionTimeout: 5000  # 5秒
+    idleTimeout: 600000  # 10分钟
+
+# 消息配置
+messages:
+  # 管理操作消息
+  # 可用变量：%admin%, %player%
+  ban: "&c管理员 &e%admin% &c封禁了玩家 &e%player%"
+  kick: "&c管理员 &e%admin% &c踢出了玩家 &e%player%"
+  
+  # 举报相关消息
+  # 可用变量：%reporter%, %player%, %reason%
+  report-sent: "&a你的举报已提交！管理员会尽快处理。"
+  report-received: "&e[举报] &c%reporter% &e举报了 &c%player% &e原因: &c%reason%"
+  report-cooldown: "&c你需要等待 %time% 秒才能再次举报。"
+  report-self: "&c你不能举报自己！"
+  report-handled: "&a举报已被管理员 &e%admin% &a处理。状态: &e%status%"
+
+# 举报设置
+report:
+  # 举报冷却时间（秒）
+  cooldown: 300
+  # 最短举报原因长度
+  min-reason-length: 10
+  # 最长举报原因长度
+  max-reason-length: 200
+  # TAB补全的常用举报原因
+  reasons:
+    - "使用作弊客户端"
+    - "恶意击杀"
+    - "辱骂/骚扰"
+    - "破坏他人建筑"
+    - "刷屏/垃圾信息"
+    - "广告/宣传"
+    - "不当言论"
+    - "其他违规行为"
+
+# 调试模式（开启后会输出更多日志信息）
+debug: false

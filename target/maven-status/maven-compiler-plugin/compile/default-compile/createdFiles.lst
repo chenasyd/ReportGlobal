@@ -1,0 +1,6 @@
+org\a\reportGlobal\commands\ReportAdminCommand.class
+org\a\reportGlobal\commands\ReportGlobalCommand.class
+org\a\reportGlobal\database\DatabaseManager.class
+org\a\reportGlobal\ReportGlobal.class
+org\a\reportGlobal\listeners\AdminActionListener.class
+org\a\reportGlobal\commands\ReportCommand.class

@@ -1,0 +1,30 @@
+name: ReportGlobal
+version: '1.0-SNAPSHOT'
+main: org.a.reportGlobal.ReportGlobal
+description: '全服播报管理员的封禁和踢出操作，以及玩家举报系统'
+author: 'Craft'
+
+commands:
+  reportglobal:
+    description: '重载插件配置'
+    usage: '/reportglobal reload'
+    permission: reportglobal.admin
+  report:
+    description: '举报玩家'
+    usage: '/report <玩家> <原因>'
+    permission: reportglobal.report
+  reportadmin:
+    description: '管理举报'
+    usage: '/reportadmin <list|view|handle> [参数]'
+    permission: reportglobal.admin
+
+permissions:
+  reportglobal.admin:
+    description: '允许使用ReportGlobal管理命令'
+    default: op
+  reportglobal.report:
+    description: '允许举报其他玩家'
+    default: true
+  reportglobal.exempt:
+    description: '豁免被举报'
+    default: op
